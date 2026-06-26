@@ -1,49 +1,61 @@
 # 🎬 Movie Recommendation System
 
-A modern AI-powered Movie Recommendation System built using **Machine Learning (TF-IDF + Cosine Similarity)**, **FastAPI**, **Streamlit**, and the **TMDB API**.
+An AI-powered **Movie Recommendation System** built using **Python**, **Streamlit**, **FastAPI**, **Scikit-learn**, and the **TMDB API**.
 
-The application recommends similar movies based on movie content and enriches recommendations with real-time movie information, posters, ratings, genres, and release dates fetched from TMDB.
+The application recommends similar movies using **Content-Based Filtering (TF-IDF + Cosine Similarity)** while fetching real-time movie information such as posters, ratings, genres, release dates, and descriptions from TMDB.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-- 🎥 Search movies by title
-- 🤖 Content-based movie recommendation
-- 📚 TF-IDF Vectorizer + Cosine Similarity
-- 🖼️ Movie posters from TMDB
-- ⭐ Movie ratings
-- 🎭 Genres
-- 📅 Release dates
-- 📖 Movie overview/details
-- ⚡ FastAPI backend
-- 🎨 Streamlit frontend
-- 🔍 Autocomplete search
-- 📦 Pre-trained recommendation model using Pickle
+**🌐 Streamlit App**
+
+https://movie-recomm-sys-kgyzrv6qvq96bp8pqmbxul.streamlit.app/?view=home
+
+---
+
+## ✨ Features
+
+* 🎬 Browse Trending, Popular, Top Rated, Upcoming and Now Playing movies
+* 🔍 Smart movie search with autocomplete suggestions
+* 🤖 Content-based movie recommendations using TF-IDF and Cosine Similarity
+* 🎭 Genre-based recommendations
+* ⭐ Movie ratings
+* 📅 Release dates
+* 🖼️ High-quality movie posters
+* 📖 Detailed movie overview
+* ⚡ Responsive Streamlit interface
+* 🌐 TMDB API integration
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- Streamlit
+
+* Streamlit
 
 ### Backend
-- FastAPI
-- Uvicorn
+
+* FastAPI
+* Uvicorn
 
 ### Machine Learning
-- Scikit-learn
-- TF-IDF Vectorizer
-- Cosine Similarity
 
-### Data Processing
-- Pandas
-- NumPy
-- SciPy
+* Scikit-learn
+* TF-IDF Vectorizer
+* Cosine Similarity
 
-### External API
-- TMDB (The Movie Database)
+### Libraries
+
+* Pandas
+* NumPy
+* SciPy
+* Requests
+
+### API
+
+* TMDB API
 
 ---
 
@@ -52,10 +64,9 @@ The application recommends similar movies based on movie content and enriches re
 ```
 movie-recomm-sys/
 │
-├── app.py                 # Streamlit Frontend
-├── main.py                # FastAPI Backend
-├── movies.ipynb           # Model Training Notebook
-├── movies_metadata.csv    # Movie Dataset
+├── app.py
+├── main.py
+├── movies.ipynb
 │
 ├── df.pkl
 ├── tfidf.pkl
@@ -64,47 +75,42 @@ movie-recomm-sys/
 │
 ├── requirements.txt
 ├── .env
-├── LICENSE
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
 ## ⚙️ Installation
 
-### 1. Clone the repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/movie-recomm-sys.git
-
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/movie-recomm-sys.git
 cd movie-recomm-sys
 ```
 
----
-
-### 2. Create Virtual Environment
+### Create Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-Activate it
+### Activate Virtual Environment
 
-#### Windows
+**Windows**
 
 ```bash
 .venv\Scripts\activate
 ```
 
-#### Linux / macOS
+**Linux/macOS**
 
 ```bash
 source .venv/bin/activate
 ```
 
----
-
-### 3. Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -112,12 +118,12 @@ pip install -r requirements.txt
 
 ---
 
-## 🔑 TMDB API Key
+## 🔑 Environment Variables
 
-Create a `.env` file in the project root.
+Create a `.env` file.
 
 ```env
-TMDB_API_KEY=YOUR_API_KEY
+TMDB_API_KEY=YOUR_TMDB_API_KEY
 ```
 
 Get your free API key from:
@@ -126,19 +132,13 @@ https://www.themoviedb.org/settings/api
 
 ---
 
-## ▶️ Running the Backend
+## ▶️ Run the Backend
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Backend URL
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger Documentation
+FastAPI Docs:
 
 ```
 http://127.0.0.1:8000/docs
@@ -146,7 +146,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## ▶️ Running the Frontend
+## ▶️ Run the Frontend
 
 ```bash
 streamlit run app.py
@@ -154,84 +154,87 @@ streamlit run app.py
 
 ---
 
-## 🧠 Machine Learning Pipeline
+## 🧠 Recommendation Pipeline
 
-1. Movie metadata preprocessing
-2. Feature engineering
-3. Text cleaning
-4. TF-IDF Vectorization
-5. Cosine Similarity
-6. Similar movie retrieval
-7. TMDB API integration for posters and movie details
+1. Data preprocessing
+2. Text cleaning
+3. TF-IDF Vectorization
+4. Cosine Similarity computation
+5. Content-based recommendations
+6. TMDB API integration
+7. Genre-based recommendations
 
 ---
 
 ## 📊 Dataset
 
-Dataset used:
+TMDB Movies Metadata Dataset
 
-**TMDB Movies Metadata Dataset**
+Dataset includes:
 
-Contains:
-
-- Movie Title
-- Overview
-- Genres
-- Ratings
-- Vote Count
-- Tagline
-- Release Date
+* Movie Titles
+* Genres
+* Overview
+* Ratings
+* Vote Count
+* Release Date
+* Tagline
 
 ---
 
 ## 📸 Screenshots
 
-### Home Page
+### 🏠 Home Page
 
-_Add screenshot here_
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/fe4ad167-7a42-4b09-bb36-2b48c463677f" />
 
-### Movie Details
+### 🔍 Search Results
 
-_Add screenshot here_
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/33dc84bf-3e13-4a26-8c88-53f3a78fc5ab" />
 
-### Recommendations
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/b32f148f-c890-454b-ba15-eaa881beb591" />
 
-_Add screenshot here_
+### 🎬 Movie Details
 
----
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/0d2a46fa-d636-46a3-ba68-5c03153be2ee" />
 
-## 🔮 Future Improvements
+### 🤖 Recommendations
 
-- Hybrid Recommendation System
-- User Authentication
-- User Watchlist
-- Collaborative Filtering
-- Deep Learning Recommendation Model
-- Sentiment-based Recommendations
-- Movie Trailer Integration
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/f5b30fd4-444f-4fbc-b0c2-9fbe73f5e61b" />
 
 ---
 
-## 👨‍💻 Author
+## 🚀 Future Improvements
+
+* User authentication
+* User watchlist
+* Favorite movies
+* Hybrid recommendation system
+* Collaborative filtering
+* Personalized recommendations
+* Movie trailers
+* User reviews
+
+---
+
+## 👩‍💻 Author
 
 **Kakul Barsaiya**
 
-B.Tech CSE | Machine Learning & Data Science Enthusiast
+B.Tech Computer Science Engineering
 
-GitHub:
-https://github.com/<your-username>
+Machine Learning & Data Science Enthusiast
 
-LinkedIn:
-_Add your LinkedIn profile_
+GitHub: https://github.com/KAKUL23FE10CSE00261
 
 ---
 
 ## ⭐ Support
 
-If you like this project, please consider giving it a ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ on GitHub.
 
 ---
 
-## 📜 License
+## 📄 License
 
 This project is licensed under the MIT License.
